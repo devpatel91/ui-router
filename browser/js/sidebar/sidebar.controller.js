@@ -1,13 +1,15 @@
 'use strict';
 
-juke.controller('SidebarCtrl', function ($scope, $rootScope) {
+juke.controller('SidebarCtrl', function ($scope, $rootScope,$state) {
 
   $scope.viewAlbums = function () {
-    $rootScope.$broadcast('viewSwap', { name: 'allAlbums'});
+    $state.go("allAlbums");
   };
 
   $scope.viewAllArtists = function () {
-    $rootScope.$broadcast('viewSwap', { name: 'allArtists' });
+   $state.go("allArtist");
   };
+
+ 
 
 });
